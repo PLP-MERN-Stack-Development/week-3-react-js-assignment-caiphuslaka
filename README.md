@@ -1,71 +1,63 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19894304&assignment_repo_type=AssignmentRepo)
-# React.js and Tailwind CSS Assignment
+function App() {
+  const [count, setCount] = useState(0);
 
-This assignment focuses on building a responsive React application using JSX and Tailwind CSS, implementing component architecture, state management, hooks, and API integration.
+  return (
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+      {/* Navbar component will go here */}
+      <header className="bg-white dark:bg-gray-800 shadow">
+        <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+          <h1 className="text-3xl font-bold">PLP Task Manager</h1>
+        </div>
+      </header>
 
-## Assignment Overview
+      <main className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+        <div className="bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg p-6">
+          <div className="flex flex-col items-center justify-center">
+            <p className="text-lg mb-4">
+              Edit <code className="font-mono bg-gray-200 dark:bg-gray-700 p-1 rounded">src/App.jsx</code> and save to test HMR
+            </p>
+            
+            <div className="flex items-center gap-4 my-4">
+              <button
+                onClick={() => setCount((count) => count - 1)}
+                className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition-colors"
+              >
+                -
+              </button>
+              <span className="text-xl font-bold">{count}</span>
+              <button
+                onClick={() => setCount((count) => count + 1)}
+                className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition-colors"
+              >
+                +
+              </button>
+            </div>
 
-You will:
-1. Set up a React project with Vite and Tailwind CSS
-2. Create reusable UI components
-3. Implement state management using React hooks
-4. Integrate with external APIs
-5. Style your application using Tailwind CSS
+            <p className="text-gray-500 dark:text-gray-400 mt-4">
+              Implement your TaskManager component here
+            </p>
+          </div>
+        </div>
+        
+        {/* API data display will go here */}
+        <div className="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg p-6">
+          <h2 className="text-2xl font-bold mb-4">API Data</h2>
+          <p className="text-gray-500 dark:text-gray-400">
+            Fetch and display data from an API here
+          </p>
+        </div>
+      </main>
 
-## Getting Started
+      {/* Footer component will go here */}
+      <footer className="bg-white dark:bg-gray-800 shadow mt-auto">
+        <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+          <p className="text-center text-gray-500 dark:text-gray-400">
+            © {new Date().getFullYear()} PLP Task Manager. All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </div>
+  );
+}
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Install dependencies:
-   ```
-   npm install
-   ```
-4. Start the development server:
-   ```
-   npm run dev
-   ```
-
-## Files Included
-
-- `Week3-Assignment.md`: Detailed assignment instructions
-- Starter files for your React application:
-  - Basic project structure
-  - Pre-configured Tailwind CSS
-  - Sample component templates
-
-## Requirements
-
-- Node.js (v18 or higher)
-- npm or yarn
-- Modern web browser
-- Code editor (VS Code recommended)
-
-## Project Structure
-
-```
-src/
-├── components/       # Reusable UI components
-├── pages/           # Page components
-├── hooks/           # Custom React hooks
-├── context/         # React context providers
-├── api/             # API integration functions
-├── utils/           # Utility functions
-└── App.jsx          # Main application component
-```
-
-## Submission
-
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
-
-1. Complete all required components and features
-2. Implement proper state management with hooks
-3. Integrate with at least one external API
-4. Style your application with Tailwind CSS
-5. Deploy your application and add the URL to your README.md
-
-## Resources
-
-- [React Documentation](https://react.dev/)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [Vite Documentation](https://vitejs.dev/guide/)
-- [React Router Documentation](https://reactrouter.com/) 
+export default App; 
